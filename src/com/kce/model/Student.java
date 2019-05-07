@@ -1,16 +1,45 @@
 package com.kce.model;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name="Student")
 public class Student {
 
+	
 	@Id
+	private int id;
+	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	private String password;
-	private String username;
+	private String cpassword;
+	
+	private String username;	
+	
+
 	private String email;
 	
+	public String getCpassword() {
+		return cpassword;
+	}
+
+	public void setCpassword(String cpassword) {
+		this.cpassword = cpassword;
+	}
+
 	private String gender;
 
 	public String getPassword() {
