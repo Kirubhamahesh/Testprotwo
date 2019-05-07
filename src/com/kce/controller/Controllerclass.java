@@ -39,6 +39,13 @@ public class Controllerclass {
 	}
 	
 	
+	@RequestMapping(value = "/cpassword", method = RequestMethod.GET)
+	public String dochangepassword(@ModelAttribute Student ob) {
+		
+		return "changepassw";
+	}
+	
+	
 	
 	@RequestMapping(value = "/view", method = RequestMethod.GET)
 	public String doview(ModelMap model) {

@@ -70,23 +70,13 @@ public class Daoimple implements DaoInterfacee  {
 		
 		
 		Session session = fact.getCurrentSession();
-		Query query = session.createQuery("from Student");
 		
-		ArrayList<Student> ab = (ArrayList<Student>) query.list();
-		
-		for(Student temp : ab)
-		{
-			System.out.println(temp.getCpassword());
-			System.out.println(temp.getPassword());
-//			if( (temp.getPassword().equals(ob.getPassword()))  )
-//			{
-//				System.out.println("enter");
-//				System.out.println(temp.getCpassword());
-//				temp.setPassword(ob.getCpassword());
-//			}
-		}
-		
-		
+		Query query = session.createQuery("update Student set password = :pass where username = :updat");
+		query.setParameter("updat", ob.getUsername());
+		query.setParameter("pass", ob.getCpassword());
+		query.executeUpdate();
 		
 	}
-}
+	
+	
+	}

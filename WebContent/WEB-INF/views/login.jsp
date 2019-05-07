@@ -26,6 +26,10 @@
 	
 	<a href="new">create account?</a>
 	
+	<a href="cpassword">change ?</a>
+	
+	
+	
 	</fieldset>
 </body>
 </html>
