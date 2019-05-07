@@ -47,6 +47,20 @@ public class Daoimple implements DaoInterfacee  {
 		
 	}
 	
+	
+	
+	@Override
+	@Transactional
+	public ArrayList<Student> view()
+	{
+		Session session = fact.getCurrentSession();
+		Query query = session.createQuery("from Student");
+		
+		ArrayList<Student> ab = (ArrayList<Student>) query.list();
+		return ab;
+	}
+	
+	
 	@Override
 	@Transactional
 	public void dochange(Student ob)

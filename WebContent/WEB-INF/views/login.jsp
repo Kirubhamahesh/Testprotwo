@@ -9,6 +9,9 @@
 </head>
 <body>
 
+
+	<fieldset style="margin:200px; width:400px; padding :50px; margin-left:300px;">
+	
 	<form:form action="validate" modelAttribute="ob" method="get">
 	
 	<h4>username</h4>
@@ -20,5 +23,9 @@
 	<input type="submit">
 	
 	</form:form>
+	
+	<a href="new">create account?</a>
+	
+	</fieldset>
 </body>
 </html>

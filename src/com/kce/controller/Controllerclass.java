@@ -20,9 +20,7 @@ public class Controllerclass {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String dorating(ModelMap model) {
 		
-//			model.addAttribute("message","kirubha welcomes");
-//			return "changepassw";
-		return "welcome";
+		return "login";
 	}
 	
 	@RequestMapping(value = "/change", method = RequestMethod.GET)
@@ -31,6 +29,27 @@ public class Controllerclass {
 			dao.dochange(ob);
 			return "login";
 	}
+	
+	
+	
+	@RequestMapping(value = "/new", method = RequestMethod.GET)
+	public String donew(@ModelAttribute Student ob) {
+		
+		return "welcome";
+	}
+	
+	
+	
+	@RequestMapping(value = "/view", method = RequestMethod.GET)
+	public String doview(ModelMap model) {
+		
+		model.addAttribute("ob",dao.view());
+		return "viewcontent";
+	}
+	
+	
+	
+	
 	
 	
 	
@@ -47,7 +66,7 @@ public class Controllerclass {
 		
 			if(dao.validateuser(student) == 1)
 			{
-				return "welcome";
+				return "home";
 			}
 			 return "login";
 	}
