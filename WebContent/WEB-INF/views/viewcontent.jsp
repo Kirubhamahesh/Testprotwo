@@ -6,6 +6,10 @@
        <%@ page import="java.io.*" %>
      <%@ page import="java.util.*" %>
      
+      <%@ page import="com.kce.model.*" %>
+      
+     
+     
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,12 +78,9 @@
 
   <nav class="navbar navbar-expand-lg bg-dark navbar-fixed" id="top">
 
-      <a class="navbar-brand" href="#">
-          <img src="https://image.flaticon.com/icons/svg/511/511125.svg" alt="logo" style="width:30px; height: 30px;">
-        </a>
+    
 
-
-    <a class="navbar-brand" href="#" style="color:white; font-size: 25px; font-family: 'Play', sans-serif; letter-spacing:0.8px;">Learning</a>
+    <a class="navbar-brand" href="#" style="color:white; font-size: 25px; font-family: 'Play', sans-serif; letter-spacing:0.8px;">L</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -105,51 +106,7 @@
         
         </li>
         
-        
-        
-        
-        <li>
-        
-        <div class="dropdown ">
-        
-        
-         <%
        
-       String str=(String)session.getAttribute("user");
-       
-       %>
-
-        
-    <button type="button " class="btn" data-toggle="dropdown" style="background-color: lightred;  border-radius: 50%; border:1px solid red; color: red; width:40px; height:40px; ">
-    
-   
-        
-    </button>
-    <div class="dropdown-menu dropdown-menu-right">
-
-      <div class="container">
-     <div class="row">
-
-      <div class="col-sm-0"></div>
-
-
-      <div class="col-sm-12">
-
-      </div>
-
-      <div class="col-sm-0"></div>
-     </div>
-        
-     
-
-
-      </div>
-    
-    </div>
-  </div>
-        
-        </li>
-      
     
     
     
@@ -159,6 +116,31 @@
   </nav>
 
 
+<%
+    ArrayList<Student> ob = (ArrayList<Student>)request.getAttribute("ob");
+   %>
+		<table class="table table-hover" style="width:500px">
+    <thead>
+		<tr>username</tr>
+		<tr>email</tr>
+		</thead>
+		<tbody>
+		<%
+		
+		for(Student temp: ob)
+		{
+			%>
+			<tr>
+			<td><%= temp.getUsername() %> </td>
+			<td><%= temp.getEmail() %> </td>
+			</tr>
+			
+		<%  }
+		
+		%>
+		
+		</tbody>
+		</table>
 </body>
 
 
