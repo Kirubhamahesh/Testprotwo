@@ -9,6 +9,8 @@
 </head>
 <body>
 
+	<fieldset style="margin : 240px">
+	
 	<form:form action="change" modelAttribute="ob" method="get">
 	
 	<h4>username</h4>
@@ -24,5 +26,7 @@
 	<input type="submit">
 	
 	</form:form>
+	
+	</fieldset>
 </body>
 </html>
